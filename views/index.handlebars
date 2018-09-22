@@ -1,0 +1,25 @@
+
+<div class='container'>
+
+    <div class="row jumbotron">
+        <h1>Alex's Burger Joint! No calories!</h1>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-6 available">
+            <h2>Available to devour: </h2>
+            {{#each burgers}} {{#unless devoured}}
+            <p><!--<span class="label">BURGER:</span>--> {{this.burger_name}}</p>
+            {{> burgers/burger-block devoured=false}} 
+            <button style="margin-bottom: 20px;" data-id="{{this.id}}" class="btn btn-danger updateBurger">Devour</button>
+            {{/unless}} {{/each}}
+        </div>
+        <div class="col-md-6 devoured">
+            <h2>Already devoured: </h2>
+            {{#each burgers}} {{#if devoured}}
+            <p><!--<span class="label">BURGER:</span>--> {{this.burger_name}}</p>
+
+            {{!-- <button data-id="{{this.id}}" class="updateBurger">Update</button> --}} {{/if}} {{/each}}
+        </div>
+    </div>
+</div>
