@@ -5,6 +5,14 @@
     </div>
     <br>
     <div class="row">
+        <form class="create-form">
+            <input id="burg" name="new-burger" class="form-control" type="text" placeholder="Add your burger"> </form>
+            <br>
+            <button class="btn btn-success" id="submit">SUBMIT</button>
+        </form>
+    </div>
+    <br>
+    <div class="row">
         <div class="col-md-6 available">
             <h2>Available to devour: </h2>
             {{#each burgers}} {{#unless devoured}}
@@ -19,7 +27,7 @@
             <h2>Already devoured: </h2>
             {{#each burgers}} {{#if devoured}}
             <div>
-                {{> burgers/burger-block devour=false}} 
+                {{> burgers/burger-block devour=false}}
                 <br><br>
             </div>
             {{/if}} {{/each}}

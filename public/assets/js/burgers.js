@@ -1,11 +1,14 @@
 $(function() {
-    $("#change-state").on("click", function(event) {
+    $(".change-state").on("click", function(event) {
+      // console.log("clicked");
       var id = $(this).data("id");
-      var newDevour = $(this).data("newDevour");
+      var newDevour = $(this).data("newdevour");
   
       var newDevourState = {
         devoured: newDevour
       };
+
+      console.log(newDevour);
   
       // Send the PUT request.
       $.ajax("/api/burgers/" + id, {
@@ -25,8 +28,8 @@ $(function() {
       event.preventDefault();
   
       var newBurger = {
-        name: $("#burg").val().trim(),
-        sleepy: $("[name=devoured]:checked").val().trim()
+        burger_name: $("#burg").val().trim(),
+        // devoured: $("[name=devoured]:checked").val().trim()
       };
   
       // Send the POST request.
